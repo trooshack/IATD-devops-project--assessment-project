@@ -126,6 +126,6 @@ test("isValidDateString: invalid string", () => {
   });
 
   test('returns undefined if airline name is shorter than 2 characters', () => {
-  if (!airlineName || airlineName.length < 2) return undefined;
+  expect(generateFlightId('A')).toBeUndefined();
   });
  
