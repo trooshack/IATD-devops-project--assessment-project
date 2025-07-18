@@ -106,3 +106,26 @@ test("isValidDateString: invalid string", () => {
   test("generateFlightId: whitespace string", () => {
     expect(generateFlightId("   \n")).toBe(undefined);
   });
+
+  // Test for First two characters of an ID = first two uppercase letters of the airline name.
+  test('starts with the first two uppercase letters of the airline name', () => {
+  const id = generateFlightId('Qantas');
+  expect(id.slice(0, 2)).toBe('QA');
+  });
+
+  // Test for ID starts with upper case
+  test('ID starts with uppercase characters', () => {
+  const id = generateFlightId('Virgin');
+  const prefix = id.slice(0, 2);
+  expect(prefix).toMatch(/^[A-Z]{2}$/);
+  });
+
+  // Test if the airline name is empty or too short
+  test('returns undefined if airline name is empty', () => {
+  expect(generateFlightId('')).toBeUndefined();
+  });
+
+  test('returns undefined if airline name is shorter than 2 characters', () => {
+  expect(generateFlightId('A')).toBeUndefined();
+  });
+ 
