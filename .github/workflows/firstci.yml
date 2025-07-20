@@ -28,6 +28,6 @@ jobs:
     - name: Run Jest Tests
       run: npm test
     - name: Build a docker image
-      run: docker build -f test.Dockerfile -t trooshack/tekwani-trushik-intro-to-devops-a2:test-latest .
+      run: docker build -f Dockerfiles/test.Dockerfile -t trooshack/tekwani-trushik-intro-to-devops-a2:test-latest .
     - name: Push the new image to Docker hub
       run: docker push trooshack/tekwani-trushik-intro-to-devops-a2:test-latest
