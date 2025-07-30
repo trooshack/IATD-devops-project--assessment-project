@@ -5,7 +5,7 @@ FROM node:20.12-alpine
 WORKDIR /app
 
 # Copy only dependency files first (for better caching)
-COPY package.json package-lock.json ./
+COPY ../package.json package-lock.json ./
 
 RUN npm install
 
