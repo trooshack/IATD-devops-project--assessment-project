@@ -1,11 +1,9 @@
 FROM node:20.12-alpine
 
-COPY package.json package-lock.json ./
+COPY ../package.json package-lock.json ./
 
 RUN npm install
 
-COPY ./ ./
-
-COPY ./src ./
+COPY ../ ./
 
 CMD [ "npm", "start" ]
