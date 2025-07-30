@@ -1,5 +1,27 @@
 This is the Project Submission for IATD - Intro to DevOps Course, TP3 - by Trushik Tekwani.
 
+**Task 5 – RESUBMISSION**
+
+I have made changes to the folder structure such that my build context is now root directory. Both dockerfiles are triggered using the '-f' file name action on the 'docker build' command in MainCI. 
+Both the dockerfiles i.e. docker.test and docker.user are re-written to only include folders and files required.
+Note that docker.user file does not copy 'tests' folder.
+This meets the objective of only copying required files to the docker images. See screenshots below:
+
+Updated folder structure:
+
+<img width="940" height="719" alt="image" src="https://github.com/user-attachments/assets/e5fbc39c-9a0d-4929-a9aa-51680bc8896f" />
+
+docker.test file which only copies required files and folder, excludes files not required
+
+<img width="940" height="491" alt="image" src="https://github.com/user-attachments/assets/fbdada69-a0a2-4976-bda9-fc94b4fbf2ff" />
+
+docker.user file copies required files and also exlcudes 'tests' directory as per instructions. It runs CMD 'start' and not 'test'.
+
+<img width="895" height="533" alt="image" src="https://github.com/user-attachments/assets/d4f7d6cb-630c-4ae3-8bff-3c8239e63f51" />
+
+
+
+
 **Task 1 – Git Best Practices**
 There has been an effort to detail what is happening in each commit.
 Note, I learnt about the ‘git commit –amend’ command after completion of the project. Hence, could not incorporate it in the project.
