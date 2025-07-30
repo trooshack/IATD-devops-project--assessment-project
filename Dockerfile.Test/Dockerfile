@@ -10,9 +10,9 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # Copy application source code
-COPY ./src ./src
+COPY ../src ./src
 
 # Copy application source code
-COPY ./tests ./tests
+COPY ../tests ./tests
 
 CMD [ "npm", "test" ]
